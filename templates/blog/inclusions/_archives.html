@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>归档模板标签</title>
+</head>
+<body>
+<div class="widget widget-archives">
+    <h3 class="widget-title">归档</h3>
+    <ul>
+        {% for data in data_list %}
+        <li>
+            <a href="{% url 'blog:archive' data.year data.month %}">
+                {{ data.year }} 年 {{ data.month }} 月
+            </a>
+        </li>
+        {% empty %}
+            暂无归档！
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
+
